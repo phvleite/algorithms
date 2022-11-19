@@ -2,10 +2,8 @@ def study_schedule(permanence_period, target_time):
     try:
         students = 0
         for student in permanence_period:
-            entry_time = student[0]
-            departure_time = student[1]
             students = study_schedule_checked(
-                entry_time, departure_time, target_time, students
+                student[0], student[1], target_time, students
             )
     except Exception:
         return None
