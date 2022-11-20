@@ -4,20 +4,27 @@ def find_duplicate(nums):
         return False
 
     merge_sort(nums, 0, len(nums))
-    result = find_duplicate_aux(nums, 0, 1)
-    return result
+
+    for i in range(len(nums)):
+        nums_aux = nums[i + 1:]
+        for aux in nums_aux:
+            if nums[i] == aux:
+                return aux
+
+    return False
+    # result = find_duplicate_aux(nums, 0, 1, len(nums))
+    # return result
 
 
-def find_duplicate_aux(nums, number, next):
-    size = len(nums)
+def find_duplicate_aux(nums, number, next, size):
     if nums[number] == nums[next]:
         return nums[number]
     elif number + 1 == size - 1:
         return False
     elif next + 1 == size:
-        return find_duplicate_aux(nums, number + 1, number + 2)
+        return find_duplicate_aux(nums, number + 1, number + 2, size)
     else:
-        return find_duplicate_aux(nums, number, next + 1)
+        return find_duplicate_aux(nums, number, next + 1, size)
 
 
 def verify_list(nums):
@@ -80,5 +87,5 @@ def merge(list_strings, start, mid, end):
 
 
 if __name__ == "__main__":
-    list_nums = [5, 8, 3, 20, 20, 6, 9, 41]
+    list_nums = [5, 99, 58, 20, 6, 9, 5, 41]
     print(find_duplicate(list_nums))
