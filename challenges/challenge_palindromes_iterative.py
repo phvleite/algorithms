@@ -15,5 +15,5 @@ def is_palindrome_iterative(word):
 
 
 if __name__ == "__main__":
-    word = "GulauG"
+    word = "aniclina"
     print(is_palindrome_iterative(word))
