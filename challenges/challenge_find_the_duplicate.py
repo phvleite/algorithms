@@ -3,7 +3,7 @@ def find_duplicate(nums):
     if not result:
         return False
 
-    merge_sort(nums, 0, len(nums))
+    nums.sort()
 
     for i in range(len(nums)):
         nums_aux = nums[i + 1:]
@@ -12,19 +12,17 @@ def find_duplicate(nums):
                 return aux
 
     return False
-    # result = find_duplicate_aux(nums, 0, 1, len(nums))
-    # return result
 
 
-def find_duplicate_aux(nums, number, next, size):
-    if nums[number] == nums[next]:
-        return nums[number]
-    elif number + 1 == size - 1:
-        return False
-    elif next + 1 == size:
-        return find_duplicate_aux(nums, number + 1, number + 2, size)
-    else:
-        return find_duplicate_aux(nums, number, next + 1, size)
+# def find_duplicate_aux(nums, number, next, size):
+#     if nums[number] == nums[next]:
+#         return nums[number]
+#     elif number + 1 == size - 1:
+#         return False
+#     elif next + 1 == size:
+#         return find_duplicate_aux(nums, number + 1, number + 2, size)
+#     else:
+#         return find_duplicate_aux(nums, number, next + 1, size)
 
 
 def verify_list(nums):
@@ -53,37 +51,6 @@ def verify_not_negative_in_list(nums):
         if number < 0:
             return False
     return True
-
-
-def merge_sort(list_strings, start=0, end=None):
-    if end is None:
-        end = len(list_strings)
-    if (end - start) > 1:
-        mid = (start + end) // 2
-        merge_sort(list_strings, start, mid)
-        merge_sort(list_strings, mid, end)
-        merge(list_strings, start, mid, end)
-
-
-def merge(list_strings, start, mid, end):
-    left = list_strings[start:mid]
-    right = list_strings[mid:end]
-
-    left_index, right_index = 0, 0
-
-    for general_index in range(start, end):
-        if left_index >= len(left):
-            list_strings[general_index] = right[right_index]
-            right_index = right_index + 1
-        elif right_index >= len(right):
-            list_strings[general_index] = left[left_index]
-            left_index = left_index + 1
-        elif left[left_index] < right[right_index]:
-            list_strings[general_index] = left[left_index]
-            left_index = left_index + 1
-        else:
-            list_strings[general_index] = right[right_index]
-            right_index = right_index + 1
 
 
 if __name__ == "__main__":
