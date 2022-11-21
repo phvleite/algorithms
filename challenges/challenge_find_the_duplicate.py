@@ -1,15 +1,16 @@
 def find_duplicate(nums):
-    if not verify_list(nums):
-        return False
+    pass
+    # if not verify_list(nums):
+    #     return False
 
-    nums.sort()
+    # nums.sort()
 
-    for i in range(len(nums)):
-        for aux in nums[i + 1:]:
-            if nums[i] == aux:
-                return aux
+    # for ind, num in enumerate(nums):
+    #     for aux in nums[i + 1:]:
+    #         if nums[i] == aux:
+    #             return aux
 
-    return False
+    # return False
 
 
 # def find_duplicate_aux(nums, number, next, size):
