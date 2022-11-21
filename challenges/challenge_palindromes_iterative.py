@@ -1,17 +1,26 @@
 def is_palindrome_iterative(word):
-    if len(word) == 0 or word[0] != word[-1]:
-        return False
-    if len(word) == 1:
-        return True
+    pass
+    # if len(word) == 0 or word[0] != word[-1]:
+    #     return False
+    # if len(word) == 1:
+    #     return True
 
-    word = word.lower()
-    is_palindrome = False
-    while len(word) >= 1:
-        if 3 >= len(word) > 1 and word[0] == word[-1]:
-            is_palindrome = True
-        word = word[1:-1]
+    # word = word.lower()
+    # is_palindrome = False
+    # ind = 0
+    # ind_max = len(word)
+    # for ind in range(len(word)):
 
-    return is_palindrome
+    #     if 3 >= len(word) > 1 and word[0] == word[-1]:
+    #         is_palindrome = True
+    #     word = word[1:-1]
+
+    # # while len(word) >= 1:
+    # #     if 3 >= len(word) > 1 and word[0] == word[-1]:
+    # #         is_palindrome = True
+    # #     word = word[1:-1]
+
+    # return is_palindrome
 
 
 if __name__ == "__main__":
